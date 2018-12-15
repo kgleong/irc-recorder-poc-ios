@@ -3,7 +3,7 @@
 //  kiku
 //
 //  Created by Kevin Leong on 12/15/18.
-//  Copyright © 2018 Orange Mako. All rights reserved.
+//  Copyright © 2018 Orangemako. All rights reserved.
 //
 
 import UIKit
@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        guard let window = self.window else {
+            fatalError("Window not set.")
+        }
+        
+        window.makeKeyAndVisible()
+        
+        window.rootViewController = RecordingViewController()
+        
         return true
     }
 
