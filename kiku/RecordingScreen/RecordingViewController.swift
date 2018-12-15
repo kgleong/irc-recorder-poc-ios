@@ -8,11 +8,28 @@
 
 import UIKit
 
-class RecordingViewController : UIViewController {
+class RecordingViewController: UIViewController {
+    var recordButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("foo")
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.white
+        
+        recordButton.translatesAutoresizingMaskIntoConstraints = false
+        recordButton.setTitle("Record", for: .normal)
+        recordButton.setTitleColor(UIColor.blue, for: .normal)
+        recordButton.addTarget(self, action: #selector(didTapRecord), for: .touchUpInside)
+        
+        view.addSubview(recordButton)
+        
+        NSLayoutConstraint.activate([
+            recordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            recordButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            ])
+    }
+    
+    @objc private func didTapRecord() {
+        print("record tapped")
     }
 }
