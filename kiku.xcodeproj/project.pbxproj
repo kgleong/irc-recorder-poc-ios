@@ -12,9 +12,12 @@
 		9F10745A21C5C00900FF1612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F10745821C5C00900FF1612 /* Main.storyboard */; };
 		9F10745C21C5C00A00FF1612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F10745B21C5C00A00FF1612 /* Assets.xcassets */; };
 		9F10745F21C5C00A00FF1612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F10745D21C5C00A00FF1612 /* LaunchScreen.storyboard */; };
+		CAF013847D6033CE6750CADA /* Pods_kiku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5928783670EBF361C676A1 /* Pods_kiku.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23709B6EA360D695DCD88B14 /* Pods-kiku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kiku.release.xcconfig"; path = "Pods/Target Support Files/Pods-kiku/Pods-kiku.release.xcconfig"; sourceTree = "<group>"; };
+		2C5928783670EBF361C676A1 /* Pods_kiku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kiku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F10745121C5C00900FF1612 /* kiku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kiku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F10745421C5C00900FF1612 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F10745621C5C00900FF1612 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		9F10745B21C5C00A00FF1612 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F10745E21C5C00A00FF1612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F10746021C5C00A00FF1612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B46BEE6C1F0CE3D3B1F64336 /* Pods-kiku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kiku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kiku/Pods-kiku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF013847D6033CE6750CADA /* Pods_kiku.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D7FCFF2B8F22CDE9E8F9F36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C5928783670EBF361C676A1 /* Pods_kiku.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F531D64958BA2F3C1C40999 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B46BEE6C1F0CE3D3B1F64336 /* Pods-kiku.debug.xcconfig */,
+				23709B6EA360D695DCD88B14 /* Pods-kiku.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9F10744821C5C00900FF1612 = {
 			isa = PBXGroup;
 			children = (
 				9F10745321C5C00900FF1612 /* kiku */,
 				9F10745221C5C00900FF1612 /* Products */,
+				6F531D64958BA2F3C1C40999 /* Pods */,
+				2D7FCFF2B8F22CDE9E8F9F36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F10746321C5C00A00FF1612 /* Build configuration list for PBXNativeTarget "kiku" */;
 			buildPhases = (
+				D173966165A92C394D9FAE37 /* [CP] Check Pods Manifest.lock */,
 				9F10744D21C5C00900FF1612 /* Sources */,
 				9F10744E21C5C00900FF1612 /* Frameworks */,
 				9F10744F21C5C00900FF1612 /* Resources */,
@@ -129,6 +154,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D173966165A92C394D9FAE37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kiku-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F10744D21C5C00900FF1612 /* Sources */ = {
@@ -280,6 +330,7 @@
 		};
 		9F10746421C5C00A00FF1612 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B46BEE6C1F0CE3D3B1F64336 /* Pods-kiku.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +349,7 @@
 		};
 		9F10746521C5C00A00FF1612 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23709B6EA360D695DCD88B14 /* Pods-kiku.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
