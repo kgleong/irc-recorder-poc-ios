@@ -58,6 +58,7 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @objc private func didTapPlay() {
+        print("Play pressed")
         let fileURL = audioFileURL(name: "myaudiofile", fileExtension: "m4a")
         
         do {
@@ -107,10 +108,10 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
 //        recordingSettings[AVEncoderBitRateKey] = 16
         recordingSettings[AVNumberOfChannelsKey] = 1
         recordingSettings[AVSampleRateKey] = 44100
-//        recordingSettings[AVFormatIDKey] = Int(kAudioFormatMPEGLayer3)
+//        recordingSettings[AVFormatIDKey] = Int(kAudioFormatAppleIMA4)
         recordingSettings[AVFormatIDKey] = Int(kAudioFormatMPEG4AAC)
 
-        let audioFilePath = audioFileURL(name: "myaudiofile", fileExtension: "m4a")
+        let audioRecordingURL = audioFileURL(name: "myaudiofile", fileExtension: "m4a")
         
         do {
             try audioSession?.setCategory(.playAndRecord, mode: .default, options: [])
@@ -121,7 +122,9 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
         }
         
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilePath, settings: recordingSettings)
+//            try FileManager.default.removeItem(at: audioRecordingURL)
+            
+            audioRecorder = try AVAudioRecorder(url: audioRecordingURL, settings: recordingSettings)
             audioRecorder?.delegate = self
             audioRecorder?.prepareToRecord()
             audioRecorder?.record()
