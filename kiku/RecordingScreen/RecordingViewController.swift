@@ -170,9 +170,11 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
 
 extension UILabel {
     func setTextAndPrint(_ text: String?) {
-        self.text = text
-        if let newText = text {
-            print(newText)
+        DispatchQueue.main.async {
+            self.text = text
+            if let newText = text {
+                print(newText)
+            }
         }
     }
 }
