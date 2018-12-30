@@ -10,6 +10,8 @@ disabled_rules: # rule identifiers to exclude from running
   - type_body_length
   - type_name
   - weak_delegate
+  # Non-production projects only
+  - function_body_length
 opt_in_rules: # some rules are only opt-in
 included: # paths to include during linting. `--path` is ignored if present.
 excluded: # paths to ignore during linting. Takes precedence over `included`.

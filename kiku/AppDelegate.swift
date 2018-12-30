@@ -10,7 +10,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    let googleOAuthClientID = "122138472817-fp0d6ep1n2phs1gvt2v74m5bu2pibl8i.apps.googleusercontent.com"
+    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

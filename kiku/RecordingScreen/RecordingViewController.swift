@@ -9,10 +9,7 @@
 import UIKit
 import AVFoundation
 
-class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
-    // IRC POC Recording App
-    let googleDriveClientID = "44408358406-ei3hmd9l6q3369oaj3c61afirm3vjrbc.apps.googleusercontent.com"
-    
+class RecordingViewController: UIViewController, AVAudioRecorderDelegate {    
     let consoleLabel = UILabel()
     let recordButton = UIButton()
     let microphonePermissionButton = UIButton()

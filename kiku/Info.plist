@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.googleusercontent.apps.122138472817-fp0d6ep1n2phs1gvt2v74m5bu2pibl8i</string>
+		</dict>
+	</array>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone access is required to allow recording.</string>
 	<key>CFBundleDevelopmentRegion</key>
