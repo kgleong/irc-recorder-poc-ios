@@ -10,10 +10,14 @@ import UIKit
 import AVFoundation
 
 class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
+    // IRC POC Recording App
+    let googleDriveClientID = "44408358406-ei3hmd9l6q3369oaj3c61afirm3vjrbc.apps.googleusercontent.com"
+    
     let consoleLabel = UILabel()
     let recordButton = UIButton()
     let microphonePermissionButton = UIButton()
     let playButton = UIButton()
+    let googleDriveUploadButton = UIButton()
     
     var recordingSettings = [String: Any]()
     var audioPlayer: AVAudioPlayer?
@@ -48,9 +52,15 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
         consoleLabel.textAlignment = .center
         consoleLabel.numberOfLines = 0
         
+        googleDriveUploadButton.translatesAutoresizingMaskIntoConstraints = false
+        googleDriveUploadButton.setTitle("Upload to google Drive", for: .normal)
+        googleDriveUploadButton.setTitleColor(.blue, for: .normal)
+        googleDriveUploadButton.addTarget(self, action: #selector(didTapUpload), for: .touchUpInside)
+        
         view.addSubview(recordButton)
         view.addSubview(microphonePermissionButton)
         view.addSubview(playButton)
+        view.addSubview(googleDriveUploadButton)
         view.addSubview(consoleLabel)
         
         NSLayoutConstraint.activate([
@@ -60,12 +70,18 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
             microphonePermissionButton.topAnchor.constraint(equalTo: recordButton.bottomAnchor, constant: 20),
             playButton.centerXAnchor.constraint(equalTo: recordButton.centerXAnchor),
             playButton.topAnchor.constraint(equalTo: microphonePermissionButton.bottomAnchor, constant: 20),
-            consoleLabel.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: 20),
+            googleDriveUploadButton.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: 20),
+            googleDriveUploadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            consoleLabel.topAnchor.constraint(equalTo: googleDriveUploadButton.bottomAnchor, constant: 20),
             consoleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             consoleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
             ])
 
         audioSession = AVAudioSession.sharedInstance()
+    }
+    
+    @objc private func didTapUpload() {
+        consoleLabel.setTextAndPrint("Google Drive Upload Button pressed.")
     }
     
     @objc private func didTapPlay() {
