@@ -6,5 +6,8 @@ target 'kiku' do
   use_frameworks!
 
   # Pods for kiku
+  pod 'GoogleAPIClientForREST/Drive'
+  pod 'GoogleSignIn'
+
   pod 'SwiftLint'
 end
